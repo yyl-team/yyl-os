@@ -1,6 +1,6 @@
 {
   "name": "yyl-os",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "os ctrl",
   "main": "index.js",
   "directories": {
@@ -13,6 +13,9 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jackness1208/yyl-os.git"
+  },
+  "engines": {
+    "node": ">= 8.0.0"
   },
   "author": "jackness",
   "license": "ISC",
