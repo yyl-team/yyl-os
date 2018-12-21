@@ -50,3 +50,33 @@ extOs.runSpawn(str, path, showOutput)
  */
 extOs.openPath(address)
 ```
+
+## extOs.checkPort()
+```
+/**
+ * 检查 端口是否可用
+ * @param  {Number}  port 端口号
+ * @return {Promsie}
+ */
+extOs.checkPort(port)
+```
+
+## extOs.IS_WINDOWS
+```
+// 是否属于 win 系统
+extOs.IS_WINDOWS
+```
+
+## extOs.IS_LINUX
+```
+// 是否属于 linux 系统
+extOs.IS_LINUX
+```
+
+## extOs.LOCAL_IP
+```
+// 本地ip 地址
+extOs.LOCAL_IP
+```
+
+

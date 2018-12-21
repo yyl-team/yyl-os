@@ -3,13 +3,15 @@ const path = require('path');
 const fs = require('fs');
 const extFs = require('yyl-fs');
 const extOs = require('../index.js');
+const net = require('net');
 
 const TEST_CTRL = {
   RM: true,
   OPEN_BROWSER: true,
   RUN_CMD: true,
   RUN_SPAWN: true,
-  OPEN_PATH: true
+  OPEN_PATH: true,
+  CHECK_PORT: true
 };
 
 const FRAG_PATH = path.join(__dirname, '__frag');
@@ -42,6 +44,16 @@ const fn = {
       extFs.mkdirSync(path.dirname(iPath));
       fs.writeFileSync(iPath, '');
     });
+  },
+  makeAsync(fn) {
+    return function (done) {
+      fn.then(() => {
+        done();
+      });
+    };
+  },
+  makeAwait(fn) {
+    return new Promise(fn);
   }
 };
 
@@ -145,6 +157,23 @@ if (TEST_CTRL.RUN_SPAWN) {
           throw new Error(er);
         });
       }, done);
+    });
+  });
+}
+
+if (TEST_CTRL.CHECK_PORT) {
+  describe('extOs.checkPort(port) test', () => {
+    it('useage test', (done) => {
+      const server = net.createServer().listen(1234);
+      server.on('listening', async () => {
+        let canUse = await extOs.checkPort(1234);
+        expect(canUse).to.equal(false);
+        server.close();
+
+        canUse = await extOs.checkPort(4321);
+        expect(canUse).to.equal(true);
+        done();
+      });
     });
   });
 }
