@@ -133,8 +133,9 @@ if (TEST_CTRL.RUN_CMD) {
     it(`extOs.runCMD(${cmd}, ${FRAG_PATH})`, function(done) {
       this.timeout(0);
       fn.frag.here((next) => {
-        extOs.runCMD(cmd, FRAG_PATH).then(() =>{
+        extOs.runCMD(cmd, FRAG_PATH).then((msg) =>{
           expect(fs.existsSync(path.join(FRAG_PATH, 'yyl-os'))).to.equal(true);
+          expect(typeof msg).to.equal('string');
           next();
         }).catch((er) => {
           throw new Error(er);

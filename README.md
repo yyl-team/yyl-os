@@ -24,10 +24,12 @@ extOs.openBrowser(address)
 ## extOs.runCMD()
 ```
 /**
- * @param  {String}  str        cmd 命令
- * @param  {String}  path       执行命令的目录
- * @param  {Boolean} showOutput 显示日志
- * @return {Promsie} newWindow  新窗口打开
+ * @param  {String}  str            cmd 命令
+ * @param  {String}  path           执行命令的目录
+ * @param  {Boolean} showOutput     显示日志
+ * @param  {Boolean} newWindow      新窗口打开
+ * @return {Promsie} then(msg)      返回Promise
+ *                   - msg [string] log
  */
 extOs.runCMD(str, path, showOutput, newWindow)
 ```

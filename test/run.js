@@ -1,6 +1,10 @@
-const extFs = require('yyl-fs');
-const path = require('path');
-extFs.mkdirSync(path.join(__dirname, '__frag'));
+const extOs = require('../index.js');
 
-extFs.mkdirSync(FRAG_PATH);
-console.log(222222222222222)
+
+extOs.runCMD('dir', __dirname, false).then((r) => {
+  console.log('================')
+  console.log(r.length)
+  console.log(r)
+  console.log('================')
+});
+
