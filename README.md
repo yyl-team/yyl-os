@@ -80,5 +80,13 @@ extOs.IS_LINUX
 // 本地ip 地址
 extOs.LOCAL_IP
 ```
-
+## extOs.clip(str)
+```
+/**
+ * 复制 字符串到系统剪贴板(支持 windows 和 macos)
+ * @param  {String} str 需要复制的内容
+ * @return {Promise}
+ */
+extOs.clip(str)
+```
 
