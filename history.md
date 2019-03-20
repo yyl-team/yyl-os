@@ -1,4 +1,7 @@
 # 版本信息
+## 0.5.0
+* [ADD] 新增 `extOs.IS_WINDOWS_7`;
+
 ## 0.4.0
 * [ADD] 新增 `extOs.clip(str)`
 
