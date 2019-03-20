@@ -53,8 +53,7 @@ extOs.runSpawn(str, path, showOutput)
 extOs.openPath(address)
 ```
 
-##
-extOs.checkPort()
+## extOs.checkPort()
 ```
 /**
  * 检查 端口是否可用
@@ -64,8 +63,7 @@ extOs.checkPort()
 extOs.checkPort(port)
 ```
 
-##
-extOs.IS_WINDOWS 
+## extOs.IS_WINDOWS
 ```
 // 是否属于 win 系统
 extOs.IS_WINDOWS
