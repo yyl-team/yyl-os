@@ -6,8 +6,9 @@ const extOs = require('yyl-os');
 ## extOs.rm()
 ```
 /**
- * @param  {String} iPath 文件绝对路径
- * @return {Promsie}
+ * @param  {String}  iPath          文件绝对路径
+ * @return {Promsie} resolve(log)   新窗口打开
+ *                   - [String] log cmd log
  */
 extOs.rm(iPath)
 ```
@@ -15,8 +16,9 @@ extOs.rm(iPath)
 ## extOs.openBrowser()
 ```
 /**
- * @param  {String} address 网页地址
- * @return {Promsie}
+ * @param  {String}  address        网页地址
+ * @return {Promsie} resolve(log)   新窗口打开
+ *                   - [String] log cmd log
  */
 extOs.openBrowser(address)
 ```
@@ -37,9 +39,11 @@ extOs.runCMD(str, path, showOutput, newWindow)
 ## extOs.runSpawn()
 ```
 /**
- * @param  {String}  str        cmd 命令
- * @param  {String}  path       执行命令的目录
- * @return {Promsie} newWindow  新窗口打开
+ * @param  {String}  str            cmd 命令
+ * @param  {String}  path           执行命令的目录
+ * @param  {Boolean} showOutput     是否显示输出
+ * @return {Promsie} resolve(log)   新窗口打开
+ *                   - [String] log cmd log
  */
 extOs.runSpawn(str, path, showOutput)
 ```
@@ -47,8 +51,9 @@ extOs.runSpawn(str, path, showOutput)
 ## extOs.openPath()
 ```
 /**
- * @param  {String} address 文件路径
- * @return {Promsie}
+ * @param  {String} address         文件路径
+ * @return {Promsie} resolve(log)   Promise 对象
+ *                   - [String] log cmd log
  */
 extOs.openPath(address)
 ```
@@ -57,8 +62,9 @@ extOs.openPath(address)
 ```
 /**
  * 检查 端口是否可用
- * @param  {Number}  port 端口号
- * @return {Promsie}
+ * @param  {Number}  port               端口号
+ * @return {Promsie} resolve(canUse)    Promise 对象
+ *                   - [Boolean] canUse 端口是否可用
  */
 extOs.checkPort(port)
 ```
@@ -90,8 +96,9 @@ extOs.LOCAL_IP
 ```
 /**
  * 复制 字符串到系统剪贴板(支持 windows 和 macos)
- * @param  {String} str 需要复制的内容
- * @return {Promise}
+ * @param  {String}  str            需要复制的内容
+ * @return {Promsie} resolve(log)   返回 Promise
+ *                   - log [string] log
  */
 extOs.clip(str)
 ```
