@@ -1,8 +1,9 @@
 {
   "name": "yyl-os",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "os ctrl",
-  "main": "index.js",
+  "main": "lib/os.js",
+  "types": "lib/os.d.ts",
   "directories": {
     "lib": "lib",
     "test": "test"
@@ -25,7 +26,8 @@
   "homepage": "https://github.com/jackness1208/yyl-os#readme",
   "devDependencies": {
     "chai": "^4.1.2",
-    "mocha": "^6.0.2",
-    "yyl-fs": "^0.1.1"
+    "mocha": "^6.1.4",
+    "yyl-fs": "^0.1.1",
+    "yyl-util": "^2.2.0"
   }
 }

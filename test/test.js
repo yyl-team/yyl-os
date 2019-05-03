@@ -2,7 +2,8 @@ const expect = require('chai').expect;
 const path = require('path');
 const fs = require('fs');
 const extFs = require('yyl-fs');
-const extOs = require('../index.js');
+const util = require('yyl-util');
+const extOs = require('../lib/os');
 const net = require('net');
 
 const TEST_CTRL = {
@@ -11,7 +12,8 @@ const TEST_CTRL = {
   RUN_CMD: true,
   RUN_SPAWN: true,
   OPEN_PATH: true,
-  CHECK_PORT: true
+  CHECK_PORT: true,
+  INSTALL_NODE_MODULES: true
 };
 
 const FRAG_PATH = path.join(__dirname, '__frag');
@@ -176,5 +178,33 @@ if (TEST_CTRL.CHECK_PORT) {
         done();
       });
     });
+  });
+}
+
+if (TEST_CTRL.INSTALL_NODE_MODULES) {
+  describe('extOs.installNodeModules(plugins, basePath)', () => {
+    it('usage test', util.makeAsync(async () => {
+      await fn.frag.build();
+
+      // run
+      const testPlugins = ['yyl-flexlayout', 'yyl-os@0.4.0'];
+      await extOs.installNodeModules(testPlugins, FRAG_PATH);
+
+      // check
+      const pkgPath = path.join(FRAG_PATH, 'package.json');
+      const p1Path = path.join(FRAG_PATH, 'node_modules/yyl-flexlayout');
+      const p2Path = path.join(FRAG_PATH, 'node_modules/yyl-os');
+      [pkgPath, p1Path, p2Path].forEach((iPath) => {
+        expect(fs.existsSync(iPath)).to.equal(true);
+      });
+      const p2PkgPath = path.join(p2Path, 'package.json');
+      const ver = require(p2PkgPath).version;
+
+      expect(ver).to.equal('0.4.0');
+
+      // destroy
+      await fn.frag.destroy();
+
+    }, true));
   });
 }

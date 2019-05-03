@@ -95,3 +95,14 @@ extOs.LOCAL_IP
  */
 extOs.clip(str)
 ```
+
+## extOs.installNodeModules(plugins, basePath)
+```
+/**
+ * 安装 node plugins
+ * @param  {Array}        plugins  组件列表
+ * @param  {String}       basePath 安装路径
+ * @return {Promise<any>}
+ */
+ extOs.installNodeModules(plugins, basePath)
+```
