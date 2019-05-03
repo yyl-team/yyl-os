@@ -1,4 +1,8 @@
 # 版本信息
+## 0.6.0
+* [ADD] 新增 `extOs.installNodeModules(plugins, basePath)` 方法
+* [ADD] 新增 types 文件
+
 ## 0.5.0
 * [ADD] 新增 `extOs.IS_WINDOWS_7`;
 
