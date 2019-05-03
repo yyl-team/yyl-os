@@ -13,7 +13,8 @@ const TEST_CTRL = {
   RUN_SPAWN: true,
   OPEN_PATH: true,
   CHECK_PORT: true,
-  INSTALL_NODE_MODULES: true
+  INSTALL_NODE_MODULES: true,
+  INSTALL_PACKAGE: true
 };
 
 const FRAG_PATH = path.join(__dirname, '__frag');
@@ -205,6 +206,43 @@ if (TEST_CTRL.INSTALL_NODE_MODULES) {
       // destroy
       await fn.frag.destroy();
 
+    }, true));
+  });
+}
+
+if (TEST_CTRL.INSTALL_PACKAGE) {
+  describe('extOs.installPackage(pkgPath)', () => {
+    it('extOs.installPackage(pkgPath)', util.makeAsync(async () => {
+      // start
+      await fn.frag.build();
+
+      // init
+      const pkgCnt = {
+        dependencies: {
+          'yyl-flexlayout': '^1.6.1'
+        },
+        devDependencies: {
+          'yyl-os': '0.4.0'
+        }
+      };
+      const pkgPath = path.join(FRAG_PATH, 'package.json');
+      fs.writeFileSync(pkgPath, JSON.stringify(pkgCnt, null, 2));
+
+      // run
+      await extOs.installPackage(pkgPath);
+
+      const p1Path = path.join(FRAG_PATH, 'node_modules', 'yyl-flexlayout');
+      const p2Path = path.join(FRAG_PATH, 'node_modules', 'yyl-os');
+
+      [p1Path, p2Path].forEach((iPath) => {
+        expect(fs.existsSync(iPath)).to.equal(true);
+      });
+
+      const r = await extOs.installPackage(pkgPath);
+      expect(r).to.equal(undefined);
+
+      // destroy
+      await fn.frag.destroy();
     }, true));
   });
 }

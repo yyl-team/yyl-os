@@ -1,4 +1,7 @@
 # 版本信息
+## 0.6.1
+* [ADD] 新增 `extOs.installPackage(pkgPath)` 方法
+
 ## 0.6.0
 * [ADD] 新增 `extOs.installNodeModules(plugins, basePath)` 方法
 * [ADD] 新增 types 文件
