@@ -52,6 +52,15 @@ extOs.runCMD(str, iEnv, path, showOutput, newWindow)
  * @return {Promise<string>} log         cmd log
  */
 extOs.runSpawn(str, path, showOutput)
+
+/**
+ * @param  {String}          str         cmd 命令
+ * @param  {Object}          iEnv        环境变量设置
+ * @param  {String}          path        执行命令的目录
+ * @param  {Boolean}         showOutput  是否显示输出
+ * @return {Promise<string>} log         cmd log
+ */
+extOs.runSpawn(str, iEnv, path, showOutput)
 ```
 
 ## extOs.openPath()
