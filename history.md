@@ -1,4 +1,7 @@
 # 版本信息
+## 0.7.0
+* [ADD] 新增 `extOs.runCMD(cmd, iEnv, iPath)` 方法
+
 ## 0.6.1
 * [ADD] 新增 `extOs.installPackage(pkgPath)` 方法
 

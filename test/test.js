@@ -131,7 +131,7 @@ if (TEST_CTRL.OPEN_PATH) {
 }
 
 if (TEST_CTRL.RUN_CMD) {
-  describe('extOs.runCMD() test', () => {
+  describe('extOs.runCMD(cmd, iPath) test', () => {
     const cmd = 'git clone https://github.com/jackness1208/yyl-os.git';
     it(`extOs.runCMD(${cmd}, ${FRAG_PATH})`, function(done) {
       this.timeout(0);
@@ -144,6 +144,24 @@ if (TEST_CTRL.RUN_CMD) {
           throw new Error(er);
         });
       }, done);
+    });
+  });
+
+  describe('extOs.runCMD(cmd, iEnv, iPath) test', () => {
+    const cmd = 'node runCMD.test.js';
+    const iPath = path.join(__dirname, './');
+    const iEnv = {
+      mode: 'dev'
+    };
+    it(`extOs.runCMD(${cmd}, ${JSON.stringify(iEnv)}, ${iPath})`, function(done) {
+      this.timeout(0);
+      extOs.runCMD(cmd, iEnv, iPath).then((r) =>{
+        const result = r.replace(/[\r\n]+/g, '');
+        expect(result).to.equal(iEnv.mode);
+        done();
+      }).catch((er) => {
+        throw new Error(er);
+      });
     });
   });
 }
