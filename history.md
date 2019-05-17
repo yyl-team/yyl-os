@@ -1,4 +1,7 @@
 # 版本信息
+## 0.7.2(2019-05-17)
+* [FIX] `extOs.installNodeModules(plugins, basePath)` bugfix
+
 ## 0.7.1
 * [ADD] 新增 `extOs.runSpawn(cmd, iEnv, iPath) 方法
 * [TIPS] 已知问题 extOs.runSpawn 没有返回值
