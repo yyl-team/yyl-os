@@ -1,4 +1,6 @@
 # 版本信息
+## 0.7.3(2019-05-19)
+* [EDIT] `extOs.installPackage(pkgPath)` 改为 只检查 `dependencies` 内容
 ## 0.7.2(2019-05-17)
 * [FIX] `extOs.installNodeModules(plugins, basePath)` bugfix
 
