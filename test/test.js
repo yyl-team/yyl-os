@@ -14,7 +14,9 @@ const TEST_CTRL = {
   OPEN_PATH: true,
   CHECK_PORT: true,
   INSTALL_NODE_MODULES: true,
-  INSTALL_PACKAGE: true
+  INSTALL_PACKAGE: true,
+  GET_CHROME_VERSION: true,
+  GET_JAVA_VERSION: true
 };
 
 const FRAG_PATH = path.join(__dirname, '__frag');
@@ -223,7 +225,6 @@ if (TEST_CTRL.INSTALL_NODE_MODULES) {
 
       // destroy
       await fn.frag.destroy();
-
     }, true));
   });
 }
@@ -261,6 +262,22 @@ if (TEST_CTRL.INSTALL_PACKAGE) {
 
       // destroy
       await fn.frag.destroy();
+    }, true));
+  });
+}
+
+if (TEST_CTRL.GET_CHROME_VERSION) {
+  describe('extOs.getChromeVersion()', () => {
+    it('usage test', util.makeAsync(async() => {
+      expect(await extOs.getChromeVersion()).not.to.equal(undefined);
+    }, true));
+  });
+}
+
+if (TEST_CTRL.GET_JAVA_VERSION) {
+  describe('extOs.getJavaVersion()', () => {
+    it('usage test', util.makeAsync(async() => {
+      expect(await extOs.getJavaVersion()).not.to.equal(undefined);
     }, true));
   });
 }

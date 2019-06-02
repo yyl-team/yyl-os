@@ -16,5 +16,7 @@ interface Ios {
   runSpawn(cmd: string, path?:string, showOutput?: boolean): Promise<any>;
   installNodeModules(plugins: string[], basePath: string): Promise<any>;
   installPackage(pkgPath: string): Promise<any>;
+  getChromeVersion(): Promise<string|undefined>;
+  getJavaVersion(): Promise<string|undefined>;
 }
 export = os;
