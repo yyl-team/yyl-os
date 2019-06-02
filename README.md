@@ -125,3 +125,19 @@ extOs.clip(str)
  */
  extOs.installNodeModules(plugins, basePath)
 ```
+## extOs.getChromeVersion()
+```
+/**
+ * 获取 chrome 版本
+ * @return Promise<any>
+ */
+ extOs.getChromeVersion()
+```
+## extOs.getJavaVersion()
+```
+/**
+ * 获取 java 版本
+ * @return Promise<any>
+ */
+ extOs.getJavaVersion()
+```

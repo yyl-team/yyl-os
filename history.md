@@ -1,4 +1,8 @@
 # 版本信息
+## 0.8.0-beta1(2019-06-02)
+* [ADD] 新增 `extOs.getChromeVersion()` 
+* [ADD] 新增 `extOs.getJavaVersion()` 
+
 ## 0.7.3(2019-05-19)
 * [EDIT] `extOs.installPackage(pkgPath)` 改为 只检查 `dependencies` 内容
 ## 0.7.2(2019-05-17)
