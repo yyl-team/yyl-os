@@ -1,5 +1,8 @@
 # 版本信息
-## 0.8.0-beta1(2019-06-02)
+## 0.8.1(2019-06-02)
+* [FIX] 修复 linux 下 `extOs.getChromeVersion()` 获取不了的 bug 
+
+## 0.8.0(2019-06-02)
 * [ADD] 新增 `extOs.getChromeVersion()` 
 * [ADD] 新增 `extOs.getJavaVersion()` 
 
