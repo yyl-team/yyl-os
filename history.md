@@ -1,4 +1,7 @@
 # 版本信息
+## 0.8.2(2019-07-11)
+* [FIX] 修复 `extOs.installNodeModule()` 会出现 warning 问题
+
 ## 0.8.1(2019-06-02)
 * [FIX] 修复 linux 下 `extOs.getChromeVersion()` 获取不了的 bug 
 
