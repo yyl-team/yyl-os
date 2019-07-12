@@ -1,4 +1,7 @@
 # 版本信息
+## 0.8.3(2019-07-12)
+* [FIX] 修复 `extOs.installNodeModule()` 会出现 warning 问题
+
 ## 0.8.2(2019-07-11)
 * [FIX] 修复 `extOs.installNodeModule()` 会出现 warning 问题
 
