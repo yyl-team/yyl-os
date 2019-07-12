@@ -1,5 +1,9 @@
 declare const os:Ios;
 
+interface IinstallPKGOptions {
+  production: boolean;
+}
+
 interface Ios {
   IS_WINDOWS: boolean;
   IS_LINUX: boolean;
@@ -15,7 +19,7 @@ interface Ios {
   runCMD(cmd: string, iEnv:object, path?:string, showOutput?: boolean, newWindow?: boolean): Promise<any>;
   runSpawn(cmd: string, path?:string, showOutput?: boolean): Promise<any>;
   installNodeModules(plugins: string[], basePath: string): Promise<any>;
-  installPackage(pkgPath: string): Promise<any>;
+  installPackage(pkgPath: string, op?: IinstallPKGOptions): Promise<any>;
   getChromeVersion(): Promise<string|undefined>;
   getJavaVersion(): Promise<string|undefined>;
 }

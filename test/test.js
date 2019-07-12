@@ -264,6 +264,42 @@ if (TEST_CTRL.INSTALL_PACKAGE) {
       await fn.frag.destroy();
     }, true));
   });
+
+  describe('extOs.installPackage(pkgPath, { production: true })', () => {
+    it('extOs.installPackage(pkgPath, { production: true })', util.makeAsync(async () => {
+      // start
+      await fn.frag.build();
+
+      // init
+      const pkgCnt = {
+        dependencies: {
+          'yyl-flexlayout': '^1.6.1'
+        },
+        devDependencies: {
+          'yyl-os': '0.4.0'
+        }
+      };
+      const pkgPath = path.join(FRAG_PATH, 'package.json');
+      fs.writeFileSync(pkgPath, JSON.stringify(pkgCnt, null, 2));
+
+      // run
+      await extOs.installPackage(pkgPath, { production: true });
+
+      const p1Path = path.join(FRAG_PATH, 'node_modules', 'yyl-flexlayout');
+      const p2Path = path.join(FRAG_PATH, 'node_modules', 'yyl-os');
+
+      [p1Path].forEach((iPath) => {
+        expect(fs.existsSync(iPath)).to.equal(true);
+      });
+
+      [p2Path].forEach((iPath) => {
+        expect(fs.existsSync(iPath)).to.equal(false);
+      });
+
+      // destroy
+      await fn.frag.destroy();
+    }, true));
+  });
 }
 
 if (TEST_CTRL.GET_CHROME_VERSION) {
