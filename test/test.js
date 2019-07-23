@@ -273,6 +273,7 @@ if (TEST_CTRL.INSTALL_PACKAGE) {
       // init
       const pkgCnt = {
         dependencies: {
+          'react-click-outside': 'github:tj/react-click-outside',
           'yyl-flexlayout': '^1.6.1'
         },
         devDependencies: {
@@ -298,6 +299,11 @@ if (TEST_CTRL.INSTALL_PACKAGE) {
 
       // destroy
       await fn.frag.destroy();
+    }, true));
+
+    it('test case package-from-github', util.makeAsync(async () => {
+      const pkgPath = path.join(__dirname, './case/package-from-github/package.json');
+      await extOs.installPackage(pkgPath, { production: true});
     }, true));
   });
 }
