@@ -1,6 +1,10 @@
 # 版本信息
+## 0.9.1(2019-07-23)
+* [FIX] 修复 `extOs.installPackage(pkgPath, op)` 遇到 `npm install tj/react-click-outside` 会报错问题
+
 ## 0.9.0(2019-07-12)
 * [EDIT] 新增 `extOs.installPackage(pkgPath, op)` op.production 参数
+
 ## 0.8.3(2019-07-12)
 * [FIX] 修复 `extOs.installNodeModule()` 会出现 warning 问题
 

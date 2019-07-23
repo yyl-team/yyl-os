@@ -1,8 +1,5 @@
 const extOs = require('../lib/os.js');
+const path = require('path');
 
-extOs.getChromeVersion().then((v) => {
-  console.log(`chrome[${v}]`);
-});
-extOs.getJavaVersion().then((v) => {
-  console.log(`java[${v}]`);
-});
+const iPkg = path.join(__dirname, './case/package-from-github/package.json');
+extOs.installPackage(iPkg, {production: true});
