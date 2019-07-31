@@ -2,6 +2,7 @@ declare const os:Ios;
 
 interface IinstallPKGOptions {
   production: boolean;
+  loglevel: 'silent' | 'info' | 'http' | 'warn' | 'verbose' | 'silly'
 }
 
 interface Ios {

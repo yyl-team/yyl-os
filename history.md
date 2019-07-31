@@ -1,4 +1,7 @@
 # 版本信息
+## 0.10.1 (2019-07-31)
+* [ADD] 新增 `extOs.installPackage(pkgPath, op)` `op.loglevel` 参数
+
 ## 0.9.1(2019-07-23)
 * [FIX] 修复 `extOs.installPackage(pkgPath, op)` 遇到 `npm install tj/react-click-outside` 会报错问题
 
