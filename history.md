@@ -1,4 +1,6 @@
 # 版本信息
+## 0.10.3 (2020-02-10)
+* feat: 让 `extOs.runCMD()` 运行出错时会抛出对应
 ## 0.10.2 (2019-09-25)
 * feat: `extOs.runCMD()` 新增 运行目录校验
 * feat: `extOs.runSpawn()` 新增 运行目录校验
