@@ -1,4 +1,10 @@
 # 版本信息
+## 0.11.0 (2020-04-09)
+* feat: 新增 `extOs.getYarnVersion()` 方法
+* feat: 新增 `extOs.installPackage(pkgPath, op)` `op.useYarn` 参数
+* feat: 新增 `extOs.installNodeModules(plugins, basePath, useYarn)` `useYarn` 参数
+* feat: 补充 `eslnit`, `prettier`
+
 ## 0.10.3 (2020-02-10)
 * feat: 让 `extOs.runCMD()` 运行出错时会抛出对应
 ## 0.10.2 (2019-09-25)

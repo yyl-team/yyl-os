@@ -1,1 +1,1 @@
-console.log(process.env.mode);
+console.log(process.env.mode)
