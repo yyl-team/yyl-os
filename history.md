@@ -1,4 +1,6 @@
 # 版本信息
+## 0.11.1 (2020-04-09)
+* fix: 修复 `extOs.installPacakge` yarn 模式下执行不成功问题
 ## 0.11.0 (2020-04-09)
 * feat: 新增 `extOs.getYarnVersion()` 方法
 * feat: 新增 `extOs.installPackage(pkgPath, op)` `op.useYarn` 参数
