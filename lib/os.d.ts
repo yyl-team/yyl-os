@@ -1,30 +1,21 @@
-declare const os:Ios;
+declare const os:Os;
 
-interface IinstallPKGOptions {
-  production: boolean;
+interface InstallPKGOptions {
+  production: boolean
+  useYarn: boolean
   loglevel: 'silent' | 'info' | 'http' | 'warn' | 'verbose' | 'silly'
 }
 
-interface Ios {
-  /**
-   * 是否属于 windows
-   */
+interface Os {
+  /** 是否属于 windows */
   IS_WINDOWS: boolean;
-  /**
-   * 是否属于 linux
-   */
+  /** 是否属于 linux */
   IS_LINUX: boolean;
-  /**
-   * 是否属于 macOs
-   */
+  /** 是否属于 macOs */
   IS_MAC: boolean;
-  /**
-   * 是否属于 windows 7
-   */
+  /** 是否属于 windows 7 */
   IS_WINDOWS_7: boolean;
-  /**
-   * 本地 ip
-   */
+  /** 本地 ip */
   LOCAL_IP: string;
   /**
    * 复制字符串到剪贴板
@@ -80,20 +71,18 @@ interface Ios {
    * @param plugins 插件列表
    * @param basePath 安装地址
    */
-  installNodeModules(plugins: string[], basePath: string): Promise<any>;
+  installNodeModules(plugins: string[], basePath: string, useYarn: boolean): Promise<any>;
   /**
    * 安装插件
    * @param pkgPath 插件地址
    * @param op 选项
    */
-  installPackage(pkgPath: string, op?: IinstallPKGOptions): Promise<any>;
-  /**
-   * 获取 chrome 版本
-   */
+  installPackage(pkgPath: string, op?: InstallPKGOptions): Promise<any>;
+  /** 获取 chrome 版本 */
   getChromeVersion(): Promise<string|undefined>;
-  /**
-   * 获取 java 版本
-   */
+  /** 获取 yarn 版本 */
+  getYarnVersion(): Promise<string|undefined>;
+  /** 获取 java 版本 */
   getJavaVersion(): Promise<string|undefined>;
 }
 export = os;
