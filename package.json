@@ -1,6 +1,6 @@
 {
   "name": "yyl-os",
-  "version": "0.11.1",
+  "version": "0.11.2",
   "description": "os ctrl",
   "main": "lib/os.js",
   "types": "lib/os.d.ts",

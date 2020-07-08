@@ -126,6 +126,18 @@ if (TEST_CTRL.OPEN_BROWSER) {
           throw new Error(er)
         })
     })
+
+    it('extOs.openBrowser("http://webtest.yy.com/wxservice_reservation_page/?type=reservation&popupId=1&bizScene=1jBGNBrSsfyFecUrevwWcRShm7iwt") test', function (done) {
+      this.timeout(0)
+      extOs
+        .openBrowser('http://webtest.yy.com/wxservice_reservation_page/?type=reservation&popupId=1&bizScene=1jBGNBrSsfyFecUrevwWcRShm7iwt')
+        .then(() => {
+          done()
+        })
+        .catch((er) => {
+          throw new Error(er)
+        })
+    })
   })
 }
 
