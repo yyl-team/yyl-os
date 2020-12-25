@@ -1,6 +1,6 @@
 {
   "name": "yyl-os",
-  "version": "0.11.2",
+  "version": "0.11.4",
   "description": "os ctrl",
   "main": "lib/os.js",
   "types": "lib/os.d.ts",
@@ -8,7 +8,9 @@
     "env": {
       "mocha": true
     },
-    "extends": ["yyl-node"]
+    "extends": [
+      "yyl-node"
+    ]
   },
   "eslintIgnore": [
     "node_modules"
@@ -27,7 +29,7 @@
     "test": "mocha ./test/test.js",
     "eslint": "eslint ./",
     "prettier": "prettier --write ./**/*.js",
-    "prepublishOnly": "npm test & npm run prettier"
+    "prepublishOnly": "npm run prettier"
   },
   "repository": {
     "type": "git",
