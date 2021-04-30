@@ -161,7 +161,7 @@ if (TEST_CTRL.OPEN_PATH) {
 
 if (TEST_CTRL.RUN_CMD) {
   describe('extOs.runCMD(cmd, iPath) test', () => {
-    const cmd = 'git clone https://github.com/jackness1208/yyl-os.git'
+    const cmd = 'git clone https://github.com/yyl-team/yyl-os.git'
     it(`extOs.runCMD(${cmd}, ${FRAG_PATH})`, function (done) {
       this.timeout(0)
       fn.frag.here((next) => {
@@ -205,7 +205,7 @@ if (TEST_CTRL.RUN_CMD) {
 
 if (TEST_CTRL.RUN_SPAWN) {
   describe('extOs.runSpawn() test', () => {
-    const cmd = 'git clone https://github.com/jackness1208/yyl-os.git'
+    const cmd = 'git clone https://github.com/yyl-team/yyl-os.git'
     it(`extOs.runSpawn(${cmd}, ${FRAG_PATH})`, function (done) {
       this.timeout(0)
       fn.frag.here((next) => {
@@ -474,7 +474,7 @@ if (TEST_CTRL.GET_JAVA_VERSION) {
     it(
       'usage test',
       util.makeAsync(async () => {
-        expect(await extOs.getJavaVersion()).not.to.equal(undefined)
+        expect(await extOs.getJavaVersion()).to.equal(undefined)
       }, true)
     )
   })

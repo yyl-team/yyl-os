@@ -71,7 +71,7 @@ interface Os {
    * @param plugins 插件列表
    * @param basePath 安装地址
    */
-  installNodeModules(plugins: string[], basePath: string, useYarn: boolean): Promise<any>;
+  installNodeModules(plugins: string[], basePath: string, useYarn: boolean): Promise<Buffer | undefined>;
   /**
    * 安装插件
    * @param pkgPath 插件地址
