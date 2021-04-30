@@ -4,3 +4,5 @@ dist/
 __committest/
 test/__frag/
 .vscode 
+
+.DS_Store

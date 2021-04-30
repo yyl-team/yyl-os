@@ -1,4 +1,7 @@
 # 版本信息
+## 0.12.0 (2021-05-01)
+* feat: `extOs.installPackage(pkgPath, op)` `op.useYarn` 输出在返回值里面
+* feat: `extOs.installNodeModules(plugins, basePath, useYarn)`  输出在返回值里面
 
 ## 0.11.4 (2020-12-26)
 * fix: 修复 macOs `extOs.openBrowser` 在操作 带 [&] url 时会报错问题
