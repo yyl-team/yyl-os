@@ -18,6 +18,7 @@ const TEST_CTRL = {
   GET_CHROME_VERSION: true,
   GET_JAVA_VERSION: true,
   GET_YARN_VERSION: true,
+  RUN_EXEC: true,
 }
 
 const FRAG_PATH = path.join(__dirname, '__frag')
@@ -486,6 +487,17 @@ if (TEST_CTRL.GET_YARN_VERSION) {
       'usage test',
       util.makeAsync(async () => {
         expect(await extOs.getYarnVersion()).not.to.equal(undefined)
+      }, true)
+    )
+  })
+}
+
+if (TEST_CTRL.RUN_EXEC) {
+  describe('extOs.runExec()', () => {
+    it(
+      'usage test',
+      util.makeAsync(async () => {
+        expect(await extOs.runExec({ cmd: 'yarn -v' })).not.to.equal(undefined)
       }, true)
     )
   })
