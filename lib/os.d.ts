@@ -71,7 +71,7 @@ interface Os {
    * @param path 运行目录
    * @param showOutput 是否输出日志
    */
-  runSpawn(cmd: string, path?:string, showOutput?: boolean): Promise<any>;
+  runSpawn(cmd: string, path?:string, showOutput?: boolean | ((msg: Buffer) => void)): Promise<any>;
   /**
    * 安装 node_modules 插件
    * @param plugins 插件列表
