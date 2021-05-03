@@ -6,6 +6,12 @@ interface InstallPKGOptions {
   loglevel: 'silent' | 'info' | 'http' | 'warn' | 'verbose' | 'silly'
 }
 
+/** 运行脚本 - 配置 */
+interface RunExecOption {
+  cmd: string
+  cwd?: string
+}
+
 interface Os {
   /** 是否属于 windows */
   IS_WINDOWS: boolean;
@@ -84,5 +90,7 @@ interface Os {
   getYarnVersion(): Promise<string|undefined>;
   /** 获取 java 版本 */
   getJavaVersion(): Promise<string|undefined>;
+  /** 运行脚本 */
+  runExec(op: RunExecOption): Promise<string|undefined>;
 }
 export = os;

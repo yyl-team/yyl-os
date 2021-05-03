@@ -1,4 +1,8 @@
 # 版本信息
+
+## 0.13.0 (2021-05-03)
+* feat: 新增 `extOs.runExec({ cwd, cmd })`
+* feat: 调整 `extOs.getYarnVersion() 逻辑`
 ## 0.12.0 (2021-05-01)
 * feat: `extOs.installPackage(pkgPath, op)` `op.useYarn` 输出在返回值里面
 * feat: `extOs.installNodeModules(plugins, basePath, useYarn)`  输出在返回值里面
