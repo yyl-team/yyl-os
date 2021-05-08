@@ -104,10 +104,10 @@ if (TEST_CTRL.RM) {
 
 if (TEST_CTRL.OPEN_BROWSER) {
   describe('extOs.openBrowser() test', () => {
-    it('extOs.openBrowser("//www.yy.com") test', function (done) {
+    it('extOs.openBrowser("//www.baidu.com") test', function (done) {
       this.timeout(0)
       extOs
-        .openBrowser('//www.yy.com')
+        .openBrowser('//www.baidu.com')
         .then(() => {
           done()
         })
@@ -116,10 +116,10 @@ if (TEST_CTRL.OPEN_BROWSER) {
         })
     })
 
-    it('extOs.openBrowser("http://www.yy.com")', function (done) {
+    it('extOs.openBrowser("http://www.baidu.com")', function (done) {
       this.timeout(0)
       extOs
-        .openBrowser('http://www.yy.com')
+        .openBrowser('http://www.baidu.com')
         .then(() => {
           done()
         })
@@ -128,11 +128,11 @@ if (TEST_CTRL.OPEN_BROWSER) {
         })
     })
 
-    it('extOs.openBrowser("http://webtest.yy.com/wxservice_reservation_page/?type=reservation&popupId=1&bizScene=1jBGNBrSsfyFecUrevwWcRShm7iwt") test', function (done) {
+    it('extOs.openBrowser("http://webtest.baidu.com/?type=reservation&popupId=1&bizScene=1jBGNBrSsfyFecUrevwWcRShm7iwt") test', function (done) {
       this.timeout(0)
       extOs
         .openBrowser(
-          'http://webtest.yy.com/wxservice_reservation_page/?type=reservation&popupId=1&bizScene=1jBGNBrSsfyFecUrevwWcRShm7iwt'
+          'http://webtest.baidu.com/?type=reservation&popupId=1&bizScene=1jBGNBrSsfyFecUrevwWcRShm7iwt'
         )
         .then(() => {
           done()
