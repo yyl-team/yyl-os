@@ -76,8 +76,9 @@ interface Os {
    * 安装 node_modules 插件
    * @param plugins 插件列表
    * @param basePath 安装地址
+   * @param showOutput 是否输出日志
    */
-  installNodeModules(plugins: string[], basePath: string, useYarn: boolean): Promise<Buffer | undefined>;
+  installNodeModules(plugins: string[], basePath: string, useYarn: boolean, showOutput?: boolean | ((msg: Buffer) => void)): Promise<any>;
   /**
    * 安装插件
    * @param pkgPath 插件地址
