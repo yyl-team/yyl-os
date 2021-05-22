@@ -3,7 +3,8 @@ declare const os:Os;
 interface InstallPKGOptions {
   production: boolean
   useYarn: boolean
-  loglevel: 'silent' | 'info' | 'http' | 'warn' | 'verbose' | 'silly'
+  loglevel: 'silent' | 'info' | 'http' | 'warn' | 'verbose' | 'silly',
+  showOutput?: boolean | ((msg: Buffer) => void)
 }
 
 /** 运行脚本 - 配置 */
