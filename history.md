@@ -1,4 +1,6 @@
 # 版本信息
+## 0.14.3 (2021-05-23)
+* feat: 调整 `extOs.installPackage(pkgPath, op)` 新增 `op.showOutput` 属性
 
 ## 0.14.2 (2021-05-17)
 * feat: 调整 `extOs.runSpawn()` 逻辑, 补充 错误捕抓逻辑
