@@ -1,6 +1,10 @@
 const extOs = require('../lib/os.js')
 const path = require('path')
 
-extOs.runSpawn('yarn  -v', __dirname, (d) => {
-  console.log('zzz', d.toString())
-})
+extOs
+  .runSpawn('npm i vue@2.6.22', __dirname, (d) => {
+    console.log('zzz', d.toString())
+  })
+  .catch((er) => {
+    console.log('err!', er)
+  })
