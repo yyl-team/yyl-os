@@ -1,4 +1,7 @@
 # 版本信息
+## 0.14.4 (2021-06-06)
+
+* feat: 调整依赖引入方式
 ## 0.14.3 (2021-05-23)
 * feat: 调整 `extOs.installPackage(pkgPath, op)` 新增 `op.showOutput` 属性
 
